@@ -1,3 +1,5 @@
+<div align="center">
+
 # C++ Notebook ✨
 
 > A cute, responsive, beginner-friendly C++ learning website built like a pastel notebook.
@@ -7,11 +9,23 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-Interactive-fff2a8?style=for-the-badge&logo=javascript&logoColor=222)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![C++ Lessons](https://img.shields.io/badge/C++-Lessons-d4bbfc?style=for-the-badge&logo=cplusplus&logoColor=white)](https://isocpp.org/)
 
+<br />
+
+![Cute animated C++ Notebook hero](assets/readme/cute-hero.svg)
+
+</div>
+
 ## 🌸 About
 
 **C++ Notebook** is a soft, animated learning website for new C++ students. It explains programming ideas with friendly lessons, colorful examples, progress tracking, bookmarks, syntax-highlighted code, and a hand-drawn notebook style.
 
 The project is fully static, so it can run directly in the browser or be hosted on GitHub Pages.
+
+## 🖼️ Cute Preview
+
+![Responsive 3D cute preview](assets/readme/responsive-preview.svg)
+
+The README uses local SVG artwork for the cute 3D-style preview and soft floating animation. GitHub README files cannot run JavaScript, so the motion is built directly into SVG images.
 
 ## ✨ Features
 
@@ -26,6 +40,7 @@ The project is fully static, so it can run directly in the browser or be hosted 
 - 🌸 **Decorative animations** including petals, sparkles, cursor effects, and a mascot
 - 💻 **Syntax highlighting** for C++ examples using Prism.js
 - 📱 **Responsive layout** for desktop, tablet, and mobile screens
+- 🖼️ **Animated README visuals** with pastel 3D notebook art and responsive device previews
 
 ## 📱 Responsive Design
 
@@ -51,6 +66,8 @@ Main responsive breakpoints are handled in `styles.css` around `1024px`, `820px`
 
 ```text
 .
+├── assets/
+│   └── readme/     # Cute animated README SVG images
 ├── index.html      # Main page markup and CDN links
 ├── styles.css      # Cute theme, layout, animations, and responsive styles
 ├── app.js          # App logic, progress, bookmarks, theme controls, effects
