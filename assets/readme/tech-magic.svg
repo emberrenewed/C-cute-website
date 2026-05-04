@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="250" viewBox="0 0 1100 250" role="img" aria-labelledby="title desc">
+  <title id="title">Animated cute tech stack banner</title>
+  <desc id="desc">Floating pastel technology chips for HTML, CSS, JavaScript, Tailwind, Prism, and Google Fonts.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10131f"/>
+      <stop offset="100%" stop-color="#30213f"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="14" stdDeviation="10" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+    <style>
+      .stroke{stroke:#ffe5f0;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .dark{stroke:#3d2a4a;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+      .title{font:900 34px Nunito,Arial,sans-serif;fill:#fff9f4}
+      .sub{font:800 18px Nunito,Arial,sans-serif;fill:#ffd6e5}
+      .chip{font:900 24px Nunito,Arial,sans-serif;fill:#3d2a4a}
+      .small{font:800 14px Nunito,Arial,sans-serif;fill:#6b5577}
+      .code{font:900 26px "JetBrains Mono",Consolas,monospace;fill:#3d2a4a}
+    </style>
+  </defs>
+
+  <rect width="1100" height="250" rx="28" fill="url(#bg)"/>
+  <text x="48" y="56" class="title">Tech stack with cute motion</text>
+  <text x="50" y="85" class="sub">Static files, vanilla logic, soft styling, and tiny polished details.</text>
+
+  <g transform="translate(65 124)" filter="url(#shadow)">
+    <animateTransform attributeName="transform" type="translate" values="65 124;65 112;65 124" dur="3.1s" repeatCount="indefinite"/>
+    <rect width="154" height="76" rx="22" fill="#ffd6ba" class="stroke"/>
+    <text x="24" y="43" class="code">&lt;/&gt;</text>
+    <text x="78" y="36" class="chip">HTML</text>
+    <text x="80" y="57" class="small">structure</text>
+  </g>
+
+  <g transform="translate(246 124)" filter="url(#shadow)">
+    <animateTransform attributeName="transform" type="translate" values="246 124;246 138;246 124" dur="3.5s" repeatCount="indefinite"/>
+    <rect width="154" height="76" rx="22" fill="#bee3f8" class="stroke"/>
+    <text x="24" y="44" class="code">{ }</text>
+    <text x="79" y="36" class="chip">CSS</text>
+    <text x="80" y="57" class="small">responsive</text>
+  </g>
+
+  <g transform="translate(427 124)" filter="url(#shadow)">
+    <animateTransform attributeName="transform" type="translate" values="427 124;427 112;427 124" dur="3.3s" repeatCount="indefinite"/>
+    <rect width="154" height="76" rx="22" fill="#fff2a8" class="stroke"/>
+    <text x="24" y="44" class="code">JS</text>
+    <text x="78" y="36" class="chip">Vanilla</text>
+    <text x="80" y="57" class="small">interactions</text>
+  </g>
+
+  <g transform="translate(608 124)" filter="url(#shadow)">
+    <animateTransform attributeName="transform" type="translate" values="608 124;608 138;608 124" dur="3.7s" repeatCount="indefinite"/>
+    <rect width="154" height="76" rx="22" fill="#b6f0d5" class="stroke"/>
+    <text x="24" y="44" class="code">tw</text>
+    <text x="75" y="36" class="chip">Tailwind</text>
+    <text x="78" y="57" class="small">CDN helper</text>
+  </g>
+
+  <g transform="translate(789 124)" filter="url(#shadow)">
+    <animateTransform attributeName="transform" type="translate" values="789 124;789 112;789 124" dur="3.2s" repeatCount="indefinite"/>
+    <rect width="154" height="76" rx="22" fill="#d4bbfc" class="stroke"/>
+    <text x="24" y="44" class="code">++</text>
+    <text x="78" y="36" class="chip">Prism</text>
+    <text x="80" y="57" class="small">C++ colors</text>
+  </g>
+
+  <g transform="translate(970 124)" filter="url(#shadow)">
+    <animateTransform attributeName="transform" type="translate" values="970 124;970 138;970 124" dur="3.6s" repeatCount="indefinite"/>
+    <rect width="78" height="76" rx="22" fill="#ffb7ce" class="stroke"/>
+    <text x="24" y="45" class="code">Aa</text>
+  </g>
+
+  <g transform="translate(1012 62)">
+    <animateTransform attributeName="transform" type="scale" values="1;1.18;1" dur="2s" repeatCount="indefinite"/>
+    <path d="M0 18C-34 -6 -20 -34 0 -20C20 -34 34 -6 0 18Z" fill="#ff8fab" class="stroke"/>
+  </g>
+  <g transform="translate(695 61)">
+    <animateTransform attributeName="transform" type="rotate" values="-9 0 0;11 0 0;-9 0 0" dur="2.4s" repeatCount="indefinite"/>
+    <path d="M0 -18L6 -5L20 0L6 5L0 18L-6 5L-20 0L-6 -5Z" fill="#fff2a8" class="stroke"/>
+  </g>
+</svg>

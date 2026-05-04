@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="270" viewBox="0 0 1100 270" role="img" aria-labelledby="title desc">
+  <title id="title">Animated cute features banner</title>
+  <desc id="desc">Pastel animated cards showing lessons, progress, themes, code, and sparkles.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#2a1f3a"/>
+    </linearGradient>
+    <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd6e5"/>
+      <stop offset="100%" stop-color="#ff8fab"/>
+    </linearGradient>
+    <linearGradient id="mint" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e4fff3"/>
+      <stop offset="100%" stop-color="#8ee0bd"/>
+    </linearGradient>
+    <linearGradient id="lav" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4efff"/>
+      <stop offset="100%" stop-color="#bba1ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="14" stdDeviation="10" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+    <style>
+      .stroke{stroke:#ffe5f0;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .thin{stroke:#3d2a4a;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+      .title{font:900 34px Nunito,Arial,sans-serif;fill:#fff9f4}
+      .sub{font:800 18px Nunito,Arial,sans-serif;fill:#ffd6e5}
+      .card-title{font:900 22px Nunito,Arial,sans-serif;fill:#3d2a4a}
+      .card-sub{font:800 15px Nunito,Arial,sans-serif;fill:#6b5577}
+      .icon{font:900 36px "Segoe UI Emoji","Apple Color Emoji",sans-serif}
+    </style>
+  </defs>
+
+  <rect width="1100" height="270" rx="28" fill="url(#bg)"/>
+  <g opacity="0.18">
+    <circle cx="85" cy="52" r="54" fill="#ff8fab"/>
+    <circle cx="1012" cy="54" r="72" fill="#b6f0d5"/>
+    <circle cx="944" cy="232" r="80" fill="#d4bbfc"/>
+  </g>
+
+  <text x="48" y="57" class="title">Cute feature magic</text>
+  <text x="50" y="86" class="sub">Every important part gets a soft little sparkle.</text>
+
+  <g transform="translate(49 118)" filter="url(#shadow)">
+    <animateTransform attributeName="transform" type="translate" values="49 118;49 108;49 118" dur="3.4s" repeatCount="indefinite"/>
+    <rect width="220" height="102" rx="24" fill="url(#pink)" class="stroke"/>
+    <text x="24" y="43" class="icon">📚</text>
+    <text x="78" y="44" class="card-title">15 lessons</text>
+    <text x="78" y="70" class="card-sub">beginner C++ path</text>
+  </g>
+
+  <g transform="translate(303 118)" filter="url(#shadow)">
+    <animateTransform attributeName="transform" type="translate" values="303 118;303 130;303 118" dur="3.8s" repeatCount="indefinite"/>
+    <rect width="220" height="102" rx="24" fill="url(#mint)" class="stroke"/>
+    <text x="24" y="43" class="icon">✅</text>
+    <text x="78" y="44" class="card-title">Progress</text>
+    <text x="78" y="70" class="card-sub">saved locally</text>
+    <rect x="79" y="79" width="104" height="9" rx="5" fill="#fffdf8" opacity="0.8"/>
+    <rect x="79" y="79" width="72" height="9" rx="5" fill="#ff8fab">
+      <animate attributeName="width" values="28;112;72;28" dur="3s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <g transform="translate(557 118)" filter="url(#shadow)">
+    <animateTransform attributeName="transform" type="translate" values="557 118;557 108;557 118" dur="3.2s" repeatCount="indefinite"/>
+    <rect width="220" height="102" rx="24" fill="url(#lav)" class="stroke"/>
+    <text x="24" y="43" class="icon">🎨</text>
+    <text x="78" y="44" class="card-title">Palettes</text>
+    <text x="78" y="70" class="card-sub">themes and vibes</text>
+    <circle cx="93" cy="84" r="8" fill="#ff8fab"/>
+    <circle cx="116" cy="84" r="8" fill="#b6f0d5"/>
+    <circle cx="139" cy="84" r="8" fill="#fff2a8"/>
+    <circle cx="162" cy="84" r="8" fill="#d4bbfc"/>
+  </g>
+
+  <g transform="translate(811 118)" filter="url(#shadow)">
+    <animateTransform attributeName="transform" type="translate" values="811 118;811 130;811 118" dur="3.6s" repeatCount="indefinite"/>
+    <rect width="240" height="102" rx="24" fill="#fff2a8" class="stroke"/>
+    <text x="24" y="43" class="icon">💻</text>
+    <text x="78" y="44" class="card-title">Code</text>
+    <text x="78" y="70" class="card-sub">C++ syntax highlights</text>
+    <path d="M82 83H144M158 83H205" class="thin"/>
+  </g>
+
+  <g>
+    <g transform="translate(936 76)">
+      <animateTransform attributeName="transform" type="rotate" values="-10 0 0;12 0 0;-10 0 0" dur="2.5s" repeatCount="indefinite"/>
+      <path d="M0 -20L7 -6L22 0L7 6L0 20L-7 6L-22 0L-7 -6Z" fill="#fff2a8" class="stroke"/>
+    </g>
+    <g transform="translate(682 54)">
+      <animateTransform attributeName="transform" type="scale" values="1;1.18;1" dur="2.1s" repeatCount="indefinite"/>
+      <path d="M0 19C-35 -6 -21 -35 0 -21C21 -35 35 -6 0 19Z" fill="#ff8fab" class="stroke"/>
+    </g>
+    <g transform="translate(1010 199)">
+      <animateTransform attributeName="transform" type="translate" values="1010 199;1010 180;1010 199" dur="2.8s" repeatCount="indefinite"/>
+      <circle r="18" fill="#b6f0d5" class="stroke"/>
+      <circle cx="7" cy="-7" r="6" fill="#fffdf8"/>
+    </g>
+  </g>
+</svg>

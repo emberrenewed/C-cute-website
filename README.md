@@ -29,6 +29,10 @@ The README uses local SVG artwork for the cute 3D-style preview and soft floatin
 
 ## ✨ Features
 
+<p align="center">
+  <img src="assets/readme/features-magic.svg" alt="Animated cute feature cards" width="100%" />
+</p>
+
 - 📚 **15 beginner C++ lessons** from introduction basics to small projects
 - 🔍 **Lesson search** for quickly finding topics
 - ✅ **Progress tracker** saved in the browser with `localStorage`
@@ -44,6 +48,10 @@ The README uses local SVG artwork for the cute 3D-style preview and soft floatin
 
 ## 📱 Responsive Design
 
+<p align="center">
+  <img src="assets/readme/responsive-magic.svg" alt="Animated cute responsive design preview" width="100%" />
+</p>
+
 The layout adapts across screen sizes:
 
 - **Desktop:** sidebar lessons + main notebook page
@@ -54,6 +62,10 @@ The layout adapts across screen sizes:
 Main responsive breakpoints are handled in `styles.css` around `1024px`, `820px`, `600px`, and `480px`.
 
 ## 🧁 Tech Stack
+
+<p align="center">
+  <img src="assets/readme/tech-magic.svg" alt="Animated cute tech stack chips" width="100%" />
+</p>
 
 - **HTML5** for the page structure
 - **CSS3** for the custom notebook theme, animations, palettes, and responsive layout
