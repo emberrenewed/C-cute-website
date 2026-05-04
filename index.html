@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C++ Notebook ✨ — Learn C++ the Cute Way!</title>
+  <meta name="description" content="A magical, girly, hand-drawn notebook for learning C++ — beginner-friendly, super cute, fully animated." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Comic+Neue:wght@400;700&family=Nunito:wght@400;600;700;900&family=Patrick+Hand&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FFF9F4',
+            paper: '#FFFDF8',
+            peach: '#FFD6BA',
+            blush: '#FFC2D4',
+            bubble: '#FFB7CE',
+            lavender: '#D4BBFC',
+            mint: '#B6F0D5',
+            sky: '#BEE3F8',
+            butter: '#FFF2A8',
+            cocoa: '#5B3A29',
+            ink: '#3D2A4A'
+          },
+          fontFamily: {
+            hand: ['"Patrick Hand"', 'cursive'],
+            crayon: ['"Caveat"', 'cursive'],
+            cute: ['"Comic Neue"', 'cursive'],
+            body: ['"Nunito"', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Prism for syntax highlighting -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css"
+  />
+
+  <!-- Custom crayon theme -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="font-body bg-cream text-ink overflow-x-hidden">
+  <!-- SVG crayon filter for wobbly hand-drawn borders -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <filter id="crayon" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="3" />
+        <feDisplacementMap in="SourceGraphic" scale="3" />
+      </filter>
+      <filter id="wobble" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="7" />
+        <feDisplacementMap in="SourceGraphic" scale="2" />
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- Floating decorations (parallax + 3D bobbing) -->
+  <div class="decorations" aria-hidden="true">
+    <span class="deco float-slow"   data-depth="0.4" style="top:8%;left:4%">🌸</span>
+    <span class="deco float-medium" data-depth="0.8" style="top:18%;left:88%">⭐</span>
+    <span class="deco float-fast"   data-depth="1.2" style="top:38%;left:6%">☁️</span>
+    <span class="deco float-slow"   data-depth="0.6" style="top:55%;left:92%">🍬</span>
+    <span class="deco float-medium" data-depth="1.0" style="top:72%;left:3%">🎀</span>
+    <span class="deco float-fast"   data-depth="0.5" style="top:85%;left:90%">💖</span>
+    <span class="deco float-slow"   data-depth="0.9" style="top:25%;left:50%">✨</span>
+    <span class="deco float-medium" data-depth="0.7" style="top:65%;left:48%">🌷</span>
+    <span class="deco float-fast"   data-depth="1.1" style="top:14%;left:30%">🦋</span>
+    <span class="deco float-slow"   data-depth="0.5" style="top:48%;left:20%">🌙</span>
+    <span class="deco float-medium" data-depth="0.8" style="top:80%;left:55%">🍓</span>
+    <span class="deco float-fast"   data-depth="1.3" style="top:5%;left:70%">💫</span>
+  </div>
+
+  <!-- Cute floating bunny mascot 🐰 -->
+  <div class="mascot" id="mascot" aria-hidden="true" title="hi cutie!">
+    <div class="mascot-body">
+      <div class="mascot-ear left"></div>
+      <div class="mascot-ear right"></div>
+      <div class="mascot-face">
+        <div class="mascot-eye left"></div>
+        <div class="mascot-eye right"></div>
+        <div class="mascot-blush left"></div>
+        <div class="mascot-blush right"></div>
+        <div class="mascot-mouth"></div>
+      </div>
+      <div class="mascot-shadow"></div>
+    </div>
+    <div class="mascot-bubble" id="mascotBubble">hi cutie! 💕</div>
+  </div>
+
+  <!-- Click sparkles container -->
+  <div class="sparkle-layer" id="sparkleLayer" aria-hidden="true"></div>
+
+  <!-- Heart trail following cursor 💖 -->
+  <div class="heart-trail" id="heartTrail" aria-hidden="true"></div>
+
+  <!-- Falling petals 🌸 -->
+  <div class="petal-layer" id="petalLayer" aria-hidden="true"></div>
+
+  <!-- Custom sparkle cursor -->
+  <div class="cursor-sparkle" id="cursorSparkle" aria-hidden="true">✨</div>
+
+  <!-- 🎨 Cute Palette & Style Drawer -->
+  <div class="palette-drawer" id="paletteDrawer" aria-hidden="true">
+    <div class="palette-card">
+      <button class="palette-close" id="paletteClose" aria-label="Close">✕</button>
+      <h3 class="palette-title">🎨 make it your style!</h3>
+      <p class="palette-sub">pick a color palette + a vibe 💕</p>
+
+      <div class="palette-section-label">🌸 color palette</div>
+      <div class="palette-grid" id="paletteGrid">
+        <button class="swatch" data-palette="sakura"     style="--s1:#ffb7ce;--s2:#d4bbfc;--s3:#fff2a8" title="Sakura Pink">
+          <span class="swatch-name">sakura</span>
+        </button>
+        <button class="swatch" data-palette="lavender"   style="--s1:#d4bbfc;--s2:#bee3f8;--s3:#ffd6ba" title="Lavender Dream">
+          <span class="swatch-name">lavender</span>
+        </button>
+        <button class="swatch" data-palette="mint"       style="--s1:#b6f0d5;--s2:#bee3f8;--s3:#fff2a8" title="Mint Macaron">
+          <span class="swatch-name">mint</span>
+        </button>
+        <button class="swatch" data-palette="peach"      style="--s1:#ffd6ba;--s2:#ffc2d4;--s3:#fff2a8" title="Peach Sunset">
+          <span class="swatch-name">peach</span>
+        </button>
+        <button class="swatch" data-palette="sky"        style="--s1:#bee3f8;--s2:#d4bbfc;--s3:#b6f0d5" title="Sky Cotton">
+          <span class="swatch-name">sky</span>
+        </button>
+        <button class="swatch" data-palette="strawberry" style="--s1:#ff85aa;--s2:#ffc2d4;--s3:#fff" title="Strawberry Milk">
+          <span class="swatch-name">strawberry</span>
+        </button>
+        <button class="swatch" data-palette="honey"      style="--s1:#ffe98a;--s2:#ffd6ba;--s3:#ffb7ce" title="Honey Butter">
+          <span class="swatch-name">honey</span>
+        </button>
+        <button class="swatch" data-palette="rainbow"    style="--s1:linear-gradient(90deg,#ff85aa,#ffd866,#b6f0d5,#bee3f8,#d4bbfc);--s2:#fff;--s3:#fff" title="Rainbow Magic">
+          <span class="swatch-name">rainbow</span>
+        </button>
+      </div>
+
+      <div class="palette-section-label">✨ vibe</div>
+      <div class="style-grid" id="styleGrid">
+        <button class="style-chip" data-style="crayon">✏️ crayon</button>
+        <button class="style-chip" data-style="kawaii">🎀 kawaii</button>
+        <button class="style-chip" data-style="sparkle">✨ sparkle</button>
+        <button class="style-chip" data-style="dreamy">☁️ dreamy</button>
+      </div>
+
+      <div class="palette-section-label">🌷 extras</div>
+      <div class="extras-row">
+        <label class="toggle-row">
+          <span>falling petals</span>
+          <input type="checkbox" id="togglePetals" checked>
+          <span class="toggle-slider"></span>
+        </label>
+        <label class="toggle-row">
+          <span>heart trail</span>
+          <input type="checkbox" id="toggleHearts" checked>
+          <span class="toggle-slider"></span>
+        </label>
+        <label class="toggle-row">
+          <span>cursor sparkle</span>
+          <input type="checkbox" id="toggleCursor" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <button id="menuBtn" class="menu-btn" aria-label="Open menu">☰</button>
+
+    <a href="#" class="logo" aria-label="Home">
+      <span class="logo-emoji">📓</span>
+      <span class="logo-text">
+        <span class="logo-line-1">C++</span>
+        <span class="logo-line-2">Notebook ✨</span>
+      </span>
+    </a>
+
+    <div class="search-wrap">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <input
+        id="search"
+        type="search"
+        placeholder="search lessons…"
+        aria-label="Search lessons"
+      />
+    </div>
+
+    <button id="paletteToggle" class="theme-btn palette-btn" aria-label="Change colors & style" title="Change colors & style">
+      <span class="palette-icon">🎨</span>
+    </button>
+
+    <button id="soundToggle" class="theme-btn sound-btn" aria-label="Toggle sound">
+      <span class="sound-icon">🔊</span>
+    </button>
+
+    <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">
+      <span class="theme-icon">🌙</span>
+    </button>
+  </header>
+
+  <!-- Layout: sidebar + main -->
+  <div class="layout" id="layout3d">
+    <!-- Sidebar (notebook tabs) -->
+    <aside id="sidebar" class="sidebar" aria-label="Lessons">
+      <div class="sidebar-inner">
+        <h2 class="sidebar-title">📚 My Lessons</h2>
+
+        <div class="progress-card">
+          <div class="progress-head">
+            <span>🎯 Progress</span>
+            <span id="progressText">0/15</span>
+          </div>
+          <div class="progress-bar">
+            <div id="progressBar" class="progress-fill" style="width:0%"></div>
+          </div>
+          <p id="progressMessage" class="progress-msg">let's get started! 💕</p>
+        </div>
+
+        <ul id="lessonList" class="lesson-list"></ul>
+
+        <button id="resetBtn" class="reset-btn" title="Reset progress">
+          🔄 reset progress
+        </button>
+      </div>
+    </aside>
+
+    <!-- Mobile sidebar backdrop -->
+    <div id="backdrop" class="backdrop"></div>
+
+    <!-- Main content -->
+    <main class="main">
+      <div id="lessonView" class="lesson-view"></div>
+
+      <nav class="lesson-nav">
+        <button id="prevBtn" class="nav-btn">⬅ previous</button>
+        <button id="completeBtn" class="complete-btn">
+          ✅ mark as completed
+        </button>
+        <button id="nextBtn" class="nav-btn">next ➡</button>
+      </nav>
+
+      <footer class="site-footer">
+        <p>made with 💖, crayons & C++ — happy coding cutie!</p>
+        <p class="credit">
+          website created by
+          <a href="https://ahmadmuhammet.netlify.app/" target="_blank" rel="noopener noreferrer" class="credit-link">
+            <span class="credit-name">
+              <span>A</span><span>h</span><span>m</span><span>a</span><span>d</span>
+              <span>&nbsp;</span>
+              <span>M</span><span>u</span><span>h</span><span>a</span><span>m</span><span>m</span><span>a</span><span>d</span>
+            </span>
+            <span class="credit-sparkle">✨</span>
+          </a>
+        </p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Confetti canvas -->
+  <canvas id="confetti" class="confetti"></canvas>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-clike.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cpp.min.js"></script>
+  <script src="lessons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
